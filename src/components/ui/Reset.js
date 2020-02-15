@@ -3,27 +3,19 @@ import { connect } from 'react-redux'
 import { RESET_ALL, RESET_BLUE, RESET_RED } from '../../actions/counter'
 
 const Reset = (props) => {
-    const resetAll = () => {
-        props.dispatch({ type: RESET_ALL })
-    }
-
-    const resetLeft = () => {
-        props.dispatch({ type: RESET_BLUE })
-    }
-
-    const resetRight = () => {
-        props.dispatch({ type: RESET_RED })
+    const resetCounter = (action) => {
+        props.dispatch({ type: action.type, payload: action.payload })
     }
 
     return (
         <div className="reset">
-            <button onClick={resetLeft}>
+            <button onClick={() => resetCounter(RESET_BLUE)}>
                 Reset blue
             </button>
-            <button onClick={resetRight}>
+            <button onClick={() => resetCounter(RESET_RED)}>
                 Reset red
             </button>
-            <button onClick={resetAll}>
+            <button onClick={() => resetCounter(RESET_ALL)}>
                 Reset all
             </button>
 

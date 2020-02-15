@@ -4,8 +4,7 @@
   position: relative;
 }
 
-.left,
-.right {
+.team {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -13,19 +12,23 @@
   align-items: center;
 }
 
-.left h2,
-.right h2 {
+.team h2 {
   color: #fff;
   margin-bottom: 34px;
   font-size: 46px;
 }
 
-.left {
+
+.team--blue {
   background: rgb(29, 76, 97);
 }
 
-.right {
+.team--red {
   background: rgb(97, 29, 29);
+}
+
+.team--green {
+  background: rgb(29, 97, 71);
 }
 
 .counter {
@@ -50,8 +53,7 @@ button {
   height: 184px;
   left: 50%;
   margin-left: -80px;
-  top: 50%;
-  margin-top: -62px;
+  top: 30px;
 }
 
 .reset button {
@@ -63,9 +65,10 @@ button {
   .app {
     flex-direction: column;
   }
-  .left,
-  .right {
-    height: 50vh;
+  .team--blue,
+  .team--red,
+  .team--green {
+    height: 33.333vh;
   }
 
   .reset {

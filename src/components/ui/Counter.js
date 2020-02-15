@@ -2,21 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Counter = (props) => {
-    console.log(props)
     return (
         <div className="counter">
-            { props.which === 'blue' ? props.blueCounter : props.redCounter }
+            { props[`${props.which}Counter`] }
         </div>
     );
 };
 
 const mapStateToProps = (state, ownProps) => {
-    console.log('state', state)
-    console.log('ownProps', ownProps)
   return {
     ...ownProps,
     blueCounter: state.counter.blueCounter,
     redCounter: state.counter.redCounter,
+    greenCounter: state.counter.greenCounter,
     total: state.counter.total,
   };
 };
